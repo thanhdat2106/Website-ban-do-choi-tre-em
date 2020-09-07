@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DatModelStoreContainer" CdmEntityContainer="DatModelContainer">
+    <EntitySetMapping Name="TINTUCs">
+      <EntityTypeMapping TypeName="IsTypeOf(DatModel.TINTUC)">
+        <MappingFragment StoreEntitySet="TINTUCs">
+          <ScalarProperty Name="MATC" ColumnName="MATC" />
+          <ScalarProperty Name="TENTC" ColumnName="TENTC" />
+          <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+          <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />
+          <ScalarProperty Name="VT" ColumnName="VT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

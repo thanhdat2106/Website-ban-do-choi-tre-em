@@ -1,0 +1,48 @@
+﻿
+
+@{
+    ViewBag.Title = "PhanQuyen";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>PhanQuyen</h2>
+
+@using (Html.BeginForm()) {
+    <fieldset>
+         <div class="form-group"> 
+     <div class="input-group"> 
+      <div class="input-group-addon"><i class="fa fa-user fa-fw"></i>
+        </div> <input class="form-control" placeholder="Mã quyền" type="text" name="MAQ"> 
+     </div> 
+    </div> 
+
+       <div class="form-group"> 
+         <div class="input-group"> 
+          <div class="input-group-addon"><i class="fa fa-user fa-fw"></i>
+         </div> 
+         <div class="form-check-inline">
+          <label class="form-check-label">
+        <br />
+         <input class="form-check-input" placeholder="Nam" type="radio" name="Nam" value="Admin">Admin</label>&ensp;
+         <label class="form-check-label">
+        <br />
+         <input class="form-check-input" placeholder="Nữ" type="radio" name="Nam" value="Employees">Employees</label>
+        </div>
+        </div> 
+   </div> 
+
+   <div class="form-group"> 
+     <div class="input-group"> 
+      <div class="input-group-addon"><i class="fa fa-user fa-fw"></i>
+        </div> <input class="form-control" placeholder="Mã admin" type="text" name="MAAD"> 
+     </div> 
+    </div> 
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

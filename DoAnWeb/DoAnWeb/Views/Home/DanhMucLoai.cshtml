@@ -1,0 +1,9 @@
+﻿@using DoAnWeb.Models;
+<link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+<ul class="nav flex-column" style="text-align:center">
+     <li class="nav-item border rounded" style="color:white;font-size:20px;background-color:#4ccfc1">DANH MỤC LOẠI SẢN PHẨM</li>
+    @foreach (var item in Model)
+    {
+        <li class="nav-item" style="border-bottom:1px solid #0ff"><a class="nav-link" href="~/SanPham/SanPhamTH/@item.MALOAI" style="color:#4ccfc1; font-size:1.2em">@item.TENLOAI</a></li>
+    }
+</ul>

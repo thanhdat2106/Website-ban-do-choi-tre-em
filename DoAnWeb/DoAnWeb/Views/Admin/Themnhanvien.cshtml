@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Themnhanvien";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+@using (Html.BeginForm()) {
+       <div class="form-group"> 
+     <div class="input-group"> 
+      <div class="input-group-addon"><i class="fa fa-user fa-fw"></i>
+        </div> <input class="form-control" placeholder="Mã admin" type="text" name="MAAD"> 
+     </div> 
+    </div> 
+        <div class="form-group"> 
+     <div class="input-group"> 
+      <div class="input-group-addon"><i class="fa fa-user fa-fw"></i>
+        </div> <input class="form-control" placeholder="Tên admin" type="text" name="TENAD"> 
+     </div> 
+    </div> 
+    <div class="form-group"> 
+     <div class="input-group"> 
+      <div class="input-group-addon"><i class="fa fa-user fa-fw"></i>
+        </div> <input class="form-control" placeholder="Tên tài khoản" type="text" name="TENTKAD"> 
+     </div> 
+    </div> 
+        <div class="form-group"> 
+     <div class="input-group"> 
+      <div class="input-group-addon"><i class="fa fa-user fa-fw"></i>
+        </div> <input class="form-control" placeholder="Mật khẩu admin" type="text" name="MATKHAUAD"> 
+     </div> 
+    </div> 
+
+      <div class="form-group"> 
+         <div class="input-group"> 
+          <div class="input-group-addon"><i class="fa fa-user fa-fw"></i>
+         </div> 
+         <div class="form-check-inline">
+          <label class="form-check-label">
+        <br />
+         <input class="form-check-input" placeholder="Nam" type="radio" name="Nam" value="Nam">Nam</label>&ensp;
+         <label class="form-check-label">
+        <br />
+         <input class="form-check-input" placeholder="Nữ" type="radio" name="Nam" value="Nữ">Nữ</label>
+        </div>
+        </div> 
+   </div> 
+
+   <div class="form-group"> 
+     <div class="input-group"> 
+      <div class="input-group-addon"><i class="fa fa-user fa-fw"></i>
+     </div> <input class="form-control" placeholder="Số điện thoại" type="text" name="Sodienthoai"> 
+     </div> 
+    </div> 
+
+    <div class="form-group"> 
+     <div class="input-group"> 
+      <div class="input-group-addon"><i class="fa fa-user fa-fw"></i>
+     </div> <input class="form-control" placeholder="Email" type="text" name="email"> 
+     </div> 
+    </div> 
+
+       
+
+        <p>
+            <input type="submit" value="Create" />
+            @ViewData["LoiKhoaChinh"]
+        </p>
+
+}

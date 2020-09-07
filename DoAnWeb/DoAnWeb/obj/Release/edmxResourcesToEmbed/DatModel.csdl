@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DatModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="DatModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TINTUCs" EntityType="DatModel.TINTUC" />
+  </EntityContainer>
+  <EntityType Name="TINTUC">
+    <Key>
+      <PropertyRef Name="MATC" />
+    </Key>
+    <Property Type="Int32" Name="MATC" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="TENTC" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="MOTA" Nullable="false" />
+    <Property Type="String" Name="HINHANH" Nullable="false" />
+    <Property Type="Int32" Name="VT" Nullable="false" />
+  </EntityType>
+</Schema>

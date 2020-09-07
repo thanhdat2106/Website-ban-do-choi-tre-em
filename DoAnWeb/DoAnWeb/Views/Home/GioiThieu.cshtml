@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "GioiThieu";
+    Layout = "~/Views/Shared/TrangChu.cshtml";
+}
+<link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
+<table class="table table-striped">
+     <thead class="thead-dark">
+           <tr>
+               <th>HỆ THỐNG CỬA HÀNG TB STORE</th>
+            </tr>
+     </thead>
+  @foreach(var item in Model)
+  {
+            <tbody>
+               <tr>
+
+                    <td>
+                        <p class="txt1">TB Store </p>
+                        <div id="gt1">
+                        @Html.Raw(item.ThongTin)
+                       </div>
+                       <br />
+                       <hr />
+                            <p>Địa chỉ : @item.DiaChi </p>
+                             <p>Hotline: @item.SDT</p>
+                    </td>
+                    <td class="hv">
+                      <a href="https://www.google.com/maps/place/@item.DiaChi"><img src="~/Content/HinhAnh/@item.HinhAnh";width="400px"; height="400px"/></a>
+                        
+                    </td>
+  
+               </tr>
+               <tr>
+                    <td>
+                        
+                    </td>
+               </tr>
+            </tbody>
+             }
+</table>
+<div class="row">
+    <div class="col-lg-4"> <img src="~/Content/HinhAnh/quangcao3.jpg" width=340px height=350px/> </div>
+    <div class="col-lg-4"> <img src="~/Content/HinhAnh/quangcao2.jpg" width=340px height=350px/></div>
+    <div class="col-lg-4"> <img src="~/Content/HinhAnh/quangcao3.jpg" width=340px height=350px/></div>
+</div>

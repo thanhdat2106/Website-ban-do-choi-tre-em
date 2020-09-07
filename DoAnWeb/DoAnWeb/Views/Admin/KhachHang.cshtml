@@ -1,0 +1,107 @@
+﻿@using DoAnWeb.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<DoAnWeb.Models.KHACHHANG>
+
+@{
+    ViewBag.Title = "KhachHang";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport1" content="width=device-width" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/Content/jquery_321/jquery-3.2.1.min.js"></script>
+    <script src="https://unpkg.com/popper.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <meta name="viewport1" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="container-fluid">
+
+@using (Html.BeginForm())
+{
+    <div class="form-group row"> 
+        <b class="col-sm-2" style="font-size:1.2em">Tên khách hàng</b> @Html.TextBox("SearchString", (string)ViewBag.searchValue, new { @class="form-control col-md-2" })  
+        <input type="submit" value="Tìm kiếm" class="btn btn-info col-md-1" style="margin-left:5px" />
+    </div>
+}
+<div class="row" >
+<table class="table ">
+    <thead>
+    <tr>
+        @Html.Raw(ViewBag.Headings)
+    </tr>
+    </thead>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TENKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DIACHI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SDT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NAMSINH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GIOITINH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAIKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MATK)
+        </td>
+        <td>
+            <td><button type="button" class="btn btn-danger text" style="margin-left:10px"><a href="#" style="text-decoration:none;">Delete</a></button>
+            <button type="button" class="btn btn-warning text " style="margin-left:10px"><a href="#" style="text-decoration:none;">Edit</a></button>
+              </td>
+    </tr>
+}
+
+</table>
+</div>
+<div class="row">
+    <div class="col-md-6 col-lg-6 col-xs-6 col-sm-6">
+        @using (Html.BeginForm("KhachHang","Admin",FormMethod.Get))
+        {
+            <p>
+                Kích thước trang: @Html.DropDownList("size", (List<SelectListItem>)ViewBag.size, new { @onchange = "this.form.submit();" })
+            </p>
+             
+            @Html.Hidden("page", (object) ViewBag.page)
+            @Html.Hidden("sortProperty", (object)ViewBag.sortProperty)
+            @Html.Hidden("sortOrder", (object)ViewBag.sortOrder)
+            @Html.Hidden("searchString", (object)ViewBag.searchValue)
+        }
+    </div> 
+    <div >
+        Trang: @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+    </div>
+</div>
+<div class="Menu">
+    @Html.PagedListPager(Model, page => Url.Action("KhachHang", new { page, size = ViewBag.currentSize, sortProperty = ViewBag.sortProperty, sortOrder = ViewBag.SortOrder, searchString = ViewBag.searchValue }))
+</div>
+</div>
+</body>
+</html>
+<style>
+    .Menu li{ 
+        display:inline;
+        width:30px;
+        height:30px;
+        text-align:center;
+        font-size:1.2em;
+    }
+</style>

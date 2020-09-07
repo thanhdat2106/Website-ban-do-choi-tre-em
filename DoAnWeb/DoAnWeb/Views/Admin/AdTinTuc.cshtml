@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "AdTinTuc";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport1" content="width=device-width" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/Content/jquery_321/jquery-3.2.1.min.js"></script>
+    <script src="https://unpkg.com/popper.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <meta name="viewport1" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="container-fluid">
+
+@using (Html.BeginForm())
+{
+    <div class="form-group row"> 
+        <b class="col-sm-2" style="font-size:1.2em; text-align:center">Tên Loại</b> @Html.TextBox("SearchString", (string)ViewBag.searchValue, new { @class="form-control col-md-2" })  
+        <input type="submit" value="Tìm kiếm" class="btn btn-info col-md-1" style="margin-left:5px" />
+        <button type="button" class="btn btn-info text col-md-1" style="margin-left:10px"><a href="~/Admin/ThemTinTuc" style="text-decoration:none;">Create</a></button>
+    </div>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <td>Mã tin tức</td>
+            <td>Tên tin tức</td>
+            <td>Mô tả tin tức</td>
+            <td>Hình ảnh</td>
+            <td>Vị trí show</td>
+        </tr>
+    </thead>
+    <tbody>
+       @foreach (var item in Model)
+       { 
+             <tr>
+            <td>@item.MATC</td>
+            <td>@item.TENTC</td>
+            <td>@item.MOTA</td>
+            <td>@item.HINHANH</td>
+            <td>@item.VT</td>
+            <td><button type="button" class="btn btn-danger text">@Html.ActionLink("Delete", "DeleteTT", new { matc = item.MATC })</button> <button type="button" class="btn btn-warning text">@Html.ActionLink("Edit", "EditTT", new { matc = item.MATC })</button> </td>
+        </tr>
+       }
+    </tbody>
+</table>
+</div>
+</body>
+</html>

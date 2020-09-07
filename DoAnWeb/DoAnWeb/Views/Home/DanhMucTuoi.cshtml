@@ -1,0 +1,7 @@
+﻿<ul class="nav flex-column" style="text-align:center">
+     <li class="nav-item border rounded" style="color:white;font-size:20px;background-color:#4ccfc1">ĐỘ TUỔI</li>
+    @foreach (var item in Model)
+    {
+        <li class="nav-item" style="border-bottom:1px solid #0ff"><a class="nav-link" href="~/SanPham/SanPhamTH/@item.MATUOI" style="color:#4ccfc1;font-size:1.2em">@item.DOTUOI</a></li>
+    }
+</ul>

@@ -1,0 +1,278 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/TrangChu.cshtml";
+}
+
+<link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Content/jquery_321/jquery-3.2.1.min.js"></script>
+<script src="~/Content/js/bootstrap.min.js"></script>
+<div>
+    <img src="~/Content/HinhAnh/quangcao.jpg" />
+</div>
+<br />
+<div style="border:1px solid #4ccfc1; border-radius:15px">
+<div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
+@*  <ol class="carousel-indicators" style=" margin: 0 30px;">
+    <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
+  </ol>*@
+
+  <div class="carousel-inner" >
+  
+    <div class="carousel-item active" >
+    <div style="width:200px; background:#4ccfc1; height:40px; color:white;text-align:center; font-size:1.7em; border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-right-radius:10px"> Mô hình</div>
+     <div class="row" style="margin-left: 20px; margin-top:10px;">
+    @foreach(var item in Model[0])
+    {
+        <div  class="form-group " style="text-align:center; padding-bottom:5px; width:220px">
+        
+            <div style="height:230px"><img id="hinh"  src="~/Content/HinhAnh/@item.HINHANH" width=200px height=200px title ="@item.TENSP" style="" /><br />
+            </div>
+            <div style="height:50px">
+            <a id="ten" style="text-transform:lowercase ; text-decoration:none;color:black;font-size:1.2em" href="~/SanPham/CTSanPham/@item.MASP">@item.TENSP</a>
+            </div>
+            <div style="height:30px;">
+            <p style="font-size:1.2em; color:red"> @item.DONGIA đ</p></div>
+             
+            </div>
+            <br />
+    }
+    </div>
+    <div style="text-align:right">
+        <a href="SanPham/SanPhamTH/L2"> Xem tất cả</a>
+        </div>
+    </div>
+    <div class="carousel-item " >
+   <div style="width:200px; background:#4ccfc1; height:40px; color:white;text-align:center; font-size:1.7em; border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-right-radius:10px"> Lego</div>
+    <div class="row" style="margin-left: 20px; margin-top:10px; ">
+    @foreach(var item in Model[1])
+    {
+        <div class="form-group " style="text-align:center; padding-bottom:5px; width:220px">
+            
+            <div style="height:230px"><img id="hinh"  src="~/Content/HinhAnh/@item.HINHANH" width=200px height=200px title ="@item.TENSP" style="" /><br />
+            </div>
+            <div style="height:50px">
+            <a style="text-transform:lowercase ; text-decoration:none;color:black;font-size:1.2em" href="~/SanPham/CTSanPham/@item.MASP">@item.TENSP</a>
+            </div>
+            <div style="height:30px;">
+            <p style="font-size:1.2em; color:red"> @item.DONGIA đ</p></div>
+             
+            </div>
+            <br />
+    }
+    </div>
+    <div style="text-align:right">
+        <a href="SanPham/SanPhamTH/L1"> Xem tất cả</a>
+        </div>
+    </div> 
+    </div>
+    
+        <a class="carousel-control-prev " href="#carouselExampleIndicators1" role="button" data-slide="prev" style="width:30px;text-decoration:none">
+        <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color:#4ccfc1"  ></span>
+        <span class="sr-only btn-info" >Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next"style="width:30px;">
+        <span class="carousel-control-next-icon  " aria-hidden="true" ></span>
+        <span class="sr-only btn-info">Next</span>
+        </a>
+  </div>
+  </div>
+  <br />
+<div style="border:1px solid #4ccfc1; border-radius:15px">
+<div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+
+  <div class="carousel-inner" >
+  
+    <div class="carousel-item active" >
+    <div style="width:200px; background:#4ccfc1; height:40px; color:white;text-align:center; font-size:1.7em; border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-right-radius:10px"> Chất liệu nhựa</div>
+     <div class="row" style="margin-left: 20px; margin-top:10px;">
+    @foreach(var item in Model[2])
+    {
+        <div class="form-group " style="text-align:center; padding-bottom:5px; width:220px">
+           <div style="height:230px"><img id="hinh"  src="~/Content/HinhAnh/@item.HINHANH" width=200px height=200px title ="@item.TENSP" style="" /><br />
+            </div>
+            <div style="height:50px">
+            <a style="text-transform:lowercase ; text-decoration:none;color:black;font-size:1.2em" href="~/SanPham/CTSanPham/@item.MASP">@item.TENSP</a>
+            </div>
+            <div style="height:30px;">
+            <p style="font-size:1.2em; color:red"> @item.DONGIA đ</p></div>
+             
+            </div>
+            <br />
+    }
+    </div>
+    <div style="text-align:right">
+        <a href="SanPham/SanPhamTH/CL1"> Xem tất cả</a>
+        </div>
+    </div>
+    <div class="carousel-item " >
+    <div style="width:200px; background:#4ccfc1; height:40px; color:white;text-align:center; font-size:1.7em; border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-right-radius:10px"> Chất liệu gỗ</div>
+    <div class="row" style="margin-left: 20px; margin-top:10px;">
+    @foreach(var item in Model[3])
+    {
+        <div class="form-group " style="text-align:center; padding-bottom:5px; width:220px">
+            <div style="height:230px"><img id="hinh"  src="~/Content/HinhAnh/@item.HINHANH" width=200px height=200px title ="@item.TENSP" style="" /><br />
+            </div>
+            <div style="height:50px">
+            <a style="text-transform:lowercase ; text-decoration:none;color:black;font-size:1.2em" href="~/SanPham/CTSanPham/@item.MASP">@item.TENSP</a>
+            </div>
+            <div style="height:30px;">
+            <p style="font-size:1.2em; color:red"> @item.DONGIA đ</p></div>
+             
+            </div>
+            <br />
+    }
+    </div>
+    <div style="text-align:right">
+        <a href="SanPham/SanPhamTH/CL2"> Xem tất cả</a>
+        </div>
+    </div> 
+    </div>
+    
+        <a class="carousel-control-prev " href="#carouselExampleIndicators2" role="button" data-slide="prev" style="width:30px;text-decoration:none">
+        <span class="carousel-control-prev-icon" aria-hidden="true"  ></span>
+        <span class="sr-only btn-info" >Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next"style="width:30px;">
+        <span class="carousel-control-next-icon  " aria-hidden="true" ></span>
+        <span class="sr-only btn-info">Next</span>
+        </a>
+  </div>
+  </div>
+  <br />
+  <div>
+    <img src="~/Content/HinhAnh/quangcao1.jpg" />
+</div>
+<br />
+  <div style="border:1px solid #4ccfc1; border-radius:15px">
+<div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
+
+  <div class="carousel-inner" >
+  
+    <div class="carousel-item active" >
+    <div>
+    <div style="width:200px; background:#4ccfc1; height:40px; color:white;text-align:center; font-size:1.7em; border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-right-radius:10px"> Thương hiệu </div><img src="~/Content/HinhAnh/th1.png" height="50px" />
+    </div>
+     <div class="row" style="margin-left: 20px; margin-top:10px;">
+    @foreach(var item in Model[4])
+    {
+        <div class="form-group " style="text-align:center; padding-bottom:5px; width:220px">
+           <div style="height:230px"><img id="hinh"  src="~/Content/HinhAnh/@item.HINHANH" width=200px height=200px title ="@item.TENSP" style="" /><br />
+            </div>
+            <div style="height:50px">
+            <a style="text-transform:lowercase ; text-decoration:none;color:black;font-size:1.2em" href="~/SanPham/CTSanPham/@item.MASP">@item.TENSP</a>
+            </div>
+            <div style="height:30px;">
+            <p style="font-size:1.2em; color:red"> @item.DONGIA đ</p></div>
+             
+            </div>
+            <br />
+    }
+    </div>
+    <div style="text-align:right">
+        <a href="SanPham/SanPhamTH/TH1"> Xem tất cả</a>
+        </div>
+    </div>
+    <div class="carousel-item " >
+     <div>
+    <div style="width:200px; background:#4ccfc1; height:40px; color:white;text-align:center; font-size:1.7em; border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-right-radius:10px"> Thương hiệu </div><img src="~/Content/HinhAnh/th2.png" height="50px" />
+    </div>
+    <div class="row" style="margin-left: 20px; margin-top:10px;">
+    @foreach(var item in Model[5])
+    {
+        <div class="form-group " style="text-align:center; padding-bottom:5px; width:220px">
+          <div style="height:230px"><img id="hinh"  src="~/Content/HinhAnh/@item.HINHANH" width=200px height=200px title ="@item.TENSP" style="" /><br />
+            </div>
+            <div style="height:50px">
+            <a style="text-transform:lowercase ; text-decoration:none;color:black;font-size:1.2em" href="~/SanPham/CTSanPham/@item.MASP">@item.TENSP</a>
+            </div>
+            <div style="height:30px;">
+            <p style="font-size:1.2em; color:red"> @item.DONGIA đ</p></div>
+             
+            </div>
+            <br />
+    }
+    </div>
+    <div style="text-align:right">
+        <a href="SanPham/SanPhamTH/TH2"> Xem tất cả</a>
+        </div>
+    </div> 
+    </div>
+    
+        <a class="carousel-control-prev " href="#carouselExampleIndicators3" role="button" data-slide="prev" style="width:30px;text-decoration:none">
+        <span class="carousel-control-prev-icon" aria-hidden="true"  ></span>
+        <span class="sr-only btn-info" >Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators3" role="button" data-slide="next"style="width:30px;">
+        <span class="carousel-control-next-icon  " aria-hidden="true" ></span>
+        <span class="sr-only btn-info">Next</span>
+        </a>
+  </div>
+  </div>
+
+    <br />
+<div style="border:1px solid #4ccfc1; border-radius:15px">
+<div id="carouselExampleIndicators4" class="carousel slide" data-ride="carousel">
+
+  <div class="carousel-inner" >
+  
+    <div class="carousel-item active" >
+     <div style="width:200px; background:#4ccfc1; height:40px; color:white;text-align:center; font-size:1.7em; border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-right-radius:10px"> 2-3 Tuổi</div>
+     <div class="row" style="margin-left: 20px; margin-top:10px;">
+    @foreach(var item in Model[6])
+    {
+        <div class="form-group " style="text-align:center; padding-bottom:5px; width:220px">
+            <div style="height:230px"><img id="hinh"  src="~/Content/HinhAnh/@item.HINHANH" width=200px height=200px title ="@item.TENSP" style="" /><br />
+            </div>
+            <div style="height:50px">
+            <a style="text-transform:lowercase ; text-decoration:none;color:black;font-size:1.2em" href="~/SanPham/CTSanPham/@item.MASP">@item.TENSP</a>
+            </div>
+            <div style="height:30px;">
+            <p style="font-size:1.2em; color:red"> @item.DONGIA đ</p></div>
+             
+            </div>
+            <br />
+    }
+    </div>
+    <div style="text-align:right">
+        <a href="SanPham/SanPhamTH/T3"> Xem tất cả</a>
+        </div>
+    </div>
+    <div class="carousel-item " >
+    <div style="width:200px; background:#4ccfc1; height:40px; color:white;text-align:center; font-size:1.7em; border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-right-radius:10px"> 3-4 Tuổi</div>
+    <div class="row" style="margin-left: 20px; margin-top:10px;">
+    @foreach(var item in Model[7])
+    {
+        <div class="form-group " style="text-align:center; padding-bottom:5px; width:220px">
+           <div style="height:230px"><img id="hinh"  src="~/Content/HinhAnh/@item.HINHANH" width=200px height=200px title ="@item.TENSP" style="" /><br />
+            </div>
+            <div style="height:50px">
+            <a style="text-transform:lowercase ; text-decoration:none;color:black;font-size:1.2em" href="~/SanPham/CTSanPham/@item.MASP">@item.TENSP</a>
+            </div>
+            <div style="height:30px;">
+            <p style="font-size:1.2em; color:red"> @item.DONGIA đ</p></div>
+             
+            </div>
+            <br />        
+    }
+    </div>
+    <div style="text-align:right">
+        <a href="SanPham/SanPhamTH/T4"> Xem tất cả</a>
+        </div>
+    </div> 
+    </div>
+    
+        <a class="carousel-control-prev " href="#carouselExampleIndicators4" role="button" data-slide="prev" style="width:30px;text-decoration:none">
+        <span class="carousel-control-prev-icon" aria-hidden="true"  ></span>
+        <span class="sr-only btn-info" >Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators4" role="button" data-slide="next"style="width:30px;">
+        <span class="carousel-control-next-icon  " aria-hidden="true" ></span>
+        <span class="sr-only btn-info">Next</span>
+        </a>
+  </div>
+  </div>
+  <br />

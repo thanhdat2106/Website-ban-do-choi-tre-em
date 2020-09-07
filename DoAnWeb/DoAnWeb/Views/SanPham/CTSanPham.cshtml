@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "CTSanPham";
+    Layout = "~/Views/Shared/TrangChu.cshtml";
+}
+<link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+<div class="form-row">
+   @foreach (var item in Model)
+   {
+       <div class="row">
+
+            <img src="~/Content/HinhAnh/@item.HINHANH" class="col-lg-5 col-md-5 col-sm-4" title ="@item.TENSP" />
+            <div class="col-lg-6"> 
+                <p class="font-weight-bold" style="font-size:1.7em; text-transform:uppercase">@item.TENSP</p>
+                <p class="font-weight-bold" style="font-size:1.5em">Chi tiết sản phẩm</p>                
+                <p class="text-justify font-italic" style="font-size:1.2em">@Html.Raw(item.CHITIET)</p>
+                <p style="font-size:1.3em"><b>Vận chuyển</b>: Miễn phí vận chuyển cho đơn hàng trên 500.000 VND</p>
+                <p style="font-size:1.7em"><b style="color:#4ccfc1">Đơn giá</b>: @item.DONGIA VND</p>
+                <div class="giohang">
+                
+                    <a href="@Url.Action("ThemGioHang", "GioHang", new { @ma = @item.MASP,@strURL=Request.Url.ToString()})" style="text-decoration:none; color:#ffffff ; "><img src="~/Content/HinhAnh/themgiohang.png" /> <br /><h4 class="giohang1" style=" color:black">Giỏ hàng</h4></a> 
+                                   
+                </div>
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-lg-4" style="text-align:center">
+                        <img src="~/Content/HinhAnh/xe.png" width=60px ; height=60px />
+                        <h5>Giao hàng toàn quốc</h5>
+                    </div>
+                   <div class="col-lg-4" style="text-align:center">
+                        <img src="~/Content/HinhAnh/doihang.png" width=60px ; height=60px />
+                        <h5>Đổi trả trong 7 ngày</h5>
+                    </div>
+                    <div class="col-lg-4" style="text-align:center">
+                        <img src="~/Content/HinhAnh/tick.png" width=60px ; height=60px />
+                        <h5>Đảm bảo hàng chính hãng</h5>
+                    </div>
+                </div>
+            </div>
+       </div>
+   }
+</div>

@@ -1,0 +1,103 @@
+﻿<link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Content/jquery_321/jquery-3.2.1.min.js"></script>
+<script src="~/Content/js/bootstrap.min.js"></script>
+
+<div style="width:200px; background:#4ccfc1; height:40px; color:white;text-align:center; font-size:1.7em; border-top-left-radius:10px;border-top-right-radius:10px"> Thương hiệu</div>
+<div style="border:2px solid #4ccfc1">
+<div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner" >
+  
+    <div class="carousel-item active" >
+     <div class="row" style="margin-left: 50px; margin-top:10px;">
+    @foreach(var th in Model[0])
+    {
+        <div class="form-group col-lg-2">
+            <a href="~/SanPham/SanPhamTH/@th.MATH" ><img class="anh-slider" src="~/Content/HinhAnh/@th.LOGO"   style="border:2px solid #4ccfc1; width:200px; text-decoration:none"> </a> 
+             
+            </div>
+            <br />
+    }
+    </div>
+    </div>
+    <div class="carousel-item " >
+     <div class="row" style="margin-left: 40px; margin-top:10px;">
+    @foreach(var th in Model[1])
+    {
+        <div class="form-group col-lg-2">
+            <a href="~/SanPham/SanPhamTH/@th.MATH" ><img class="anh-slider" src="~/Content/HinhAnh/@th.LOGO "   style="border:2px solid #4ccfc1; width:200px; text-decoration:none"> </a> 
+             
+            </div>
+            <br />
+    }
+    </div>
+    </div>
+
+    <div class="carousel-item " >
+     <div class="row" style="margin-left: 40px; margin-top:10px;">
+    @foreach(var th in Model[2])
+    {
+        <div class="form-group col-lg-2">
+            <a href="~/SanPham/SanPhamTH/@th.MATH" ><img class="anh-slider" src="~/Content/HinhAnh/@th.LOGO "   style="border:2px solid #4ccfc1; width:200px; text-decoration:none"> </a> 
+             
+            </div>
+            <br />
+    }
+    </div>
+    </div>
+
+    <div class="carousel-item " >
+     <div class="row" style="margin-left: 40px; margin-top:10px;">
+    @foreach(var th in Model[3])
+    {
+        <div class="form-group col-lg-2">
+            <a href="~/SanPham/SanPhamTH/@th.MATH" ><img class="anh-slider" src="~/Content/HinhAnh/@th.LOGO "   style="border:2px solid #4ccfc1; width:200px; text-decoration:none"> </a> 
+             
+            </div>
+            <br />
+    }
+    </div>
+    </div>
+    <div class="carousel-item " >
+     <div class="row" style="margin-left: 40px; margin-top:10px;">
+    @foreach(var th in Model[4])
+    {
+        <div class="form-group col-lg-2">
+            <a href="~/SanPham/SanPhamTH/@th.MATH" ><img class="anh-slider" src="~/Content/HinhAnh/@th.LOGO "   style="border:2px solid #4ccfc1; width:200px; text-decoration:none"> </a> 
+             
+            </div>
+            <br />
+    }
+    </div>
+    </div>
+    <div class="carousel-item " >
+     <div class="row" style="margin-left: 40px; margin-top:10px;">
+    @foreach(var th in Model[5])
+    {
+        <div class="form-group col-lg-2">
+            <a href="~/SanPham/SanPhamTH/@th.MATH" ><img class="anh-slider" src="~/Content/HinhAnh/@th.LOGO "   style="border:2px solid #4ccfc1; width:200px; text-decoration:none"> </a> 
+             
+            </div>
+            <br />
+    }
+    </div>
+    </div>
+
+    </div>
+    @*<a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>*@
+  </a>
+</div>
+</div>
+
+     
+  
+
+
+  
+    

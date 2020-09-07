@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/Content/jquery_321/jquery-3.2.1.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="container-fluid">
+<div class="header_bg">
+    <div class="row">
+    <div class="col-lg-4">
+			<a href="#"><img src="~/Content/HinhAnh/logo.png" alt="" width="300" height="100"/> </a>
+		</div>
+       <form class="col-lg-4 form-inline my-2 my-lg-0">
+       @using (Html.BeginForm())
+                {
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="search" >
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                 }
+         </form>
+         <div class="col-lg-2 my-3 ">
+            <a href="@Url.Action("GioHang","GioHang")"><img src="~/Content/HinhAnh/giohang.png" width="70" height="70" style="text-decoration:none"/>@Html.Action("GiohangPartial","GioHang")</a>
+         </div>
+         <div class="col-lg-2 my-3 ">
+         <a href="~/DangKy_DangNhap/DangXuat"><img class="taikhoan" src="~/Content/HinhAnh/avatar1.png"  width="50px" height="50px" style="margin-left:40px"/></a> <p> @Session["Tentk"]</p>
+            
+         </div>
+        </div>
+    
+</div>
+<div class="d_menu">             
+    <nav class="navbar navbar-expand-sm navbar-dark" >
+      <a class="navbar-brand"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+        <ul class="navbar-nav row" >
+        <li class="nav-item col-dm-2  " >
+            <a class="nav-link">@Html.ActionLink("TRANG CHỦ","Home","Home")</a>
+          </li>
+          <li class="nav-item col-dm-2">
+            <a class="nav-link">@Html.ActionLink("SALE","Home","Home")</a>
+          </li>
+          <li class="nav-item col-dm-2">
+            <a class="nav-link">@Html.ActionLink("TIN TỨC","TinTuc","Home")</a>
+          </li>
+          <li class="nav-item col-dm-2">
+            <a class="nav-link">@Html.ActionLink("GIỚI THIỆU","GioiThieu","Home")</a>
+      </li>    
+        <li class="nav-item col-dm-2">
+            <a class="nav-link">@Html.ActionLink("ĐĂNG KÝ","DangKy","DangKy_DangNhap")</a>
+      </li>
+        <li class="nav-item col-dm-2">
+            <a class="nav-link">@Html.ActionLink("ĐĂNG NHẬP","DangNhap","DangKy_DangNhap")</a>
+      </li>
+    </ul>
+  </div>  
+</nav>
+    </div>
+    <div class="slideshow-container">
+    @Html.Action("SliderSanPham","Home")
+    </div>
+
+    <br>
+    <div class="row">
+    <div class="col-lg-2">
+        @Html.Action("DanhMucLoai","Home")
+        @Html.Action("DanhMucTuoi","Home")
+    </div>  
+    <div class="col-lg-10">
+        @RenderBody()
+    </div>
+    </div>
+    <div >
+    @Html.Action("SliderThuongHieu","Home")
+    </div>
+        <div class="d_footer">
+             @Html.Action("Footer","Admin")
+      </div>
+   </div>
+</body>
+</html>

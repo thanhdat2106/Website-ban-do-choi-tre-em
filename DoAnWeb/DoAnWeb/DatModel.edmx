@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DatModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DatModelStoreContainer">
+    <EntitySet Name="TINTUCs" EntityType="DatModel.Store.TINTUCs" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="TINTUCs">
+    <Key>
+      <PropertyRef Name="MATC" />
+    </Key>
+    <Property Name="MATC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TENTC" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MOTA" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HINHANH" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="VT" Type="int" Nullable="false" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DatModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="DatModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TINTUCs" EntityType="DatModel.TINTUC" />
+        </EntityContainer>
+        <EntityType Name="TINTUC">
+          <Key>
+            <PropertyRef Name="MATC" />
+          </Key>
+          <Property Type="Int32" Name="MATC" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="TENTC" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="MOTA" Nullable="false" />
+          <Property Type="String" Name="HINHANH" Nullable="false" />
+          <Property Type="Int32" Name="VT" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DatModelStoreContainer" CdmEntityContainer="DatModelContainer">
+    <EntitySetMapping Name="TINTUCs">
+      <EntityTypeMapping TypeName="IsTypeOf(DatModel.TINTUC)">
+        <MappingFragment StoreEntitySet="TINTUCs">
+          <ScalarProperty Name="MATC" ColumnName="MATC" />
+          <ScalarProperty Name="TENTC" ColumnName="TENTC" />
+          <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+          <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />
+          <ScalarProperty Name="VT" ColumnName="VT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,64 @@
+﻿@using DoAnWeb.Models;
+<link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Content/jquery_321/jquery-3.2.1.min.js"></script>
+<script src="~/Content/js/bootstrap.min.js"></script>
+
+    <p style="color:black; font-size:2.5em; text-align:center;font-family:'Courier New'">WELLCOME TO TB STORE</p>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators" style=" margin: 0 30px;">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  
+  <div class="carousel-inner" >
+  
+    <div class="carousel-item active" style="background:#4ccfc1; border-radius:20px;">
+    <div class="row">
+    <div class="col-lg-5 " > 
+      <img class="d-block anh-slider" src="~/Content/HinhAnh/sp1.png" >
+      </div>
+      <div class="col-lg-6">
+            <div class="text">
+             <h3>Chú mèo bông</h3>
+            <h4>Chú mèo Bông Manekko Nyanmari nhận biết và ghi lại âm thanh và giọng nói</h4>
+            <h3>Giá bán: 790,000 VND</h3>
+            </div>
+        </div>
+      </div>
+      <div style="text-align:center; padding-bottom:20px;">
+        <button type="button" class="btn btn-outline-info"><a href="~/SanPham/CTSanPham/SP1" style="text-decoration:none">SHOP NOW</a></button>
+      </div>
+    </div>
+    @foreach(var sp in Model)
+  {
+   <div class="carousel-item " style="background:#4ccfc1; border-radius:20px;">
+    <div class="row">
+    <div class="col-lg-4 "> 
+      <img class="d-block anh-slider" src="~/Content/HinhAnh/@sp.HINHANH" >
+      </div>
+      <div class="col-lg-6" >
+            <div class="text">
+             <h3 style="text-transform:uppercase">@sp.TENSP</h3>
+            <h4 style="text-transform:lowercase">@sp.CHITIET</h4>
+            <h3>Giá bán: @sp.DONGIA VND</h3>
+            </div>
+        </div>
+      </div>
+      <div style="text-align:center; padding-bottom:20px;">
+        <button type="button" class="btn btn-outline-info"><a href="~/SanPham/CTSanPham/@sp.MASP" style="text-decoration:none">SHOP NOW</a></button>
+      </div>
+      </div>
+    }
+  </div>
+  
+ @* <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>*@
+</div>

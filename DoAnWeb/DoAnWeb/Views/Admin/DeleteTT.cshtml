@@ -1,0 +1,55 @@
+﻿@model DoAnWeb.TINTUC
+
+@{
+    ViewBag.Title = "DeleteTT";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>DeleteTT</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>TINTUC</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MATC)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MATC)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TENTC)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TENTC)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MOTA)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MOTA)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HINHANH)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HINHANH)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.VT)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VT)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

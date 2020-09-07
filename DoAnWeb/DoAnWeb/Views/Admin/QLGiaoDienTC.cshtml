@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "QLGiaoDienTC";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+@using (Html.BeginForm()) 
+{
+    <label>Tin tức chính</label>
+    <input type="text" name="tintucchinh"/>
+    <label>Tin phụ 1</label>
+    <input type="text" name="tintucphu1"/>
+    <label>Tin phụ 2</label>
+    <input type="text" name="tintucphu2"/>
+    <label>Tin phụ 3</label>
+    <input type="text" name="tintucphu3"/>
+   <input type="submit" value="Create" />
+}

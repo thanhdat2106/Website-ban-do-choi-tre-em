@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Dathang";
+    Layout = "~/Views/Shared/TrangChu.cshtml";
+}
+
+<h2>Thông tin đặt hàng</h2>
+@foreach(var item in Model[0])
+{
+    <h3>Tên khách hàng: @item.TENKH</h3>
+    <h3>Địa chỉ: @item.DIACHI</h3>
+    <h3>Số điện thoại: @item.SDT</h3>
+    <h3>Năm sinh: @item.NAMSINH</h3>
+    <h3>Giới tính: @item.GIOITINH</h3>
+    <h3>Loại khách hàng: @item.LOAIKH</h3>
+}
+<table class="table table-hover table-border">
+<thead>
+    <tr style="text-align:center; font-weight:bold; font-size:1.5em;color:#fff; background:#4ccfc1">
+        <td>Mã sản phẩm</td>
+        <td>Tên sản phẩm</td>
+        <td>Hình ảnh</td>
+        <td>Số lượng</td>
+        <td>Đơn giá</td>
+        <td>Thành tiền</td>
+        <td>Xử lý</td>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach(var item in Model[1])
+    {
+        <tr  style="text-align:center; font-weight:bold; font-size:1.3em; color:#000000; background:#fff">
+            <td >@item.MASP</td>
+            <td>@item.TENSP</td>
+            <td><img src="~/Content/HinhAnh/@item.HINHANH" width="200px" height="150px"/></td>
+            <td>@item.SOLUONG</td>
+            <td>@String.Format("{0:0,0}", item.DONGIA) VND</td>
+            <td>@String.Format("{0:0,0}", item.ThanhTien) VND</td>
+            <td><a href="~/SanPham/CTSanPham/@item.MASP"> Chi tiết</a>
+                @Html.ActionLink("Xóa", "XoaGiohang", new { @masp = item.MASP})
+            </td>
+            
+        </tr>
+    }
+    
+  @*  <tr  style="text-align:center; font-weight:bold; font-size:1.5em;color:#fff; text-align:right;background:#4ccfc1"">
+        <td colspan="4" >Số lượng: <b style="color:#f00"> @ViewBag.TongSoLuong </b></td>
+        <td colspan="4">Tổng tiền: <b style="color:#f00">@String.Format("{0:0,0}", ViewBag.TongTien) VND</b></td>
+    </tr>*@
+    </tbody>
+</table>
+<div style="text-align:right; margin-right:20px;"><button type="button" class="btn btn-info" style="font-size:1.5em">@Html.ActionLink("Đặt hàng","Dathang1","GioHang")</button></div>
+</div>

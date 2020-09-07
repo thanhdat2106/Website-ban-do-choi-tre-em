@@ -1,0 +1,107 @@
+﻿@using DoAnWeb.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<DoAnWeb.Models.PHANQUYEN>
+
+@{
+    ViewBag.Title = "Quanlynhanvien";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport1" content="width=device-width" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/Content/jquery_321/jquery-3.2.1.min.js"></script>
+    <script src="https://unpkg.com/popper.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <meta name="viewport1" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="container-fluid">
+
+@using (Html.BeginForm())
+{
+            <p style="font-size:1.2em">
+                Kích thước trang: @Html.DropDownList("size", (List<SelectListItem>)ViewBag.size, new { @onchange = "this.form.submit();" })
+            </p>
+    <div class="form-group row"> 
+        <b class="col-md-2" style="font-size:1.2em">Tên nhân viên</b> @Html.TextBox("SearchString", (string)ViewBag.searchValue, new { @class="form-control col-md-2" })  
+        <input type="submit" value="Tìm kiếm" class="btn btn-info col-md-1" style="margin-left:5px" />
+        <button type="button" class="btn btn-info text col-md-1" style="margin-left:10px"><a href="~/Admin/Themnhanvien" style="text-decoration:none;">Create</a></button>
+    </div>
+}
+<table class="table">
+    <thead>
+    <tr>
+        @Html.Raw(ViewBag.Headings)
+    </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+           @item.MAAD
+        </td>
+        <td>
+           @item.TENAD
+        </td>
+        <td>
+           @item.TENTKAD
+        </td>
+        <td>
+            @item.MATKHAUAD
+        </td>
+        <td>
+           @item.GIOITINH
+        </td>
+        <td>
+            @item.SDT
+        </td>
+        <td>
+           @item.MAIL
+        </td>
+        <td>
+           @item.TENQ
+        </td>
+       <td><button type="button" class="btn btn-danger text" style="margin-left:10px"><a href="#" style="text-decoration:none;">Delete</a></button>
+                <button type="button" class="btn btn-warning text " style="margin-left:10px"><a href="#" style="text-decoration:none;">Edit</a></button>
+                </td> 
+    </tr>
+}
+
+</tbody>
+</table>
+ <div >
+        Trang: @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+    </div>
+<div class="row">
+    <div class="col-md-6 col-lg-6 col-xs-6 col-sm-6">
+        @using (Html.BeginForm("Index","Admin",FormMethod.Get))
+        {
+            
+             
+            @Html.Hidden("page", (object) ViewBag.page)
+            @Html.Hidden("sortProperty", (object)ViewBag.sortProperty)
+            @Html.Hidden("sortOrder", (object)ViewBag.sortOrder)
+            @Html.Hidden("searchString", (object)ViewBag.searchValue)
+        }
+    </div> 
+</div>
+<div class="Menu">
+@Html.PagedListPager(Model, page => Url.Action("Quanlynhanvien", new { page, size = ViewBag.currentSize, sortProperty = ViewBag.sortProperty, sortOrder = ViewBag.SortOrder, searchString = ViewBag.searchValue }))
+</div>
+</div>
+</body>
+</html>
+<style>
+    .Menu li{ 
+        display:inline;
+        border:1px solid #808080;
+        width:30px;
+        height:30px;
+        text-align:center;
+    }
+</style>

@@ -1,0 +1,20 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CTTinTuc</title>
+</head>
+<body>
+    <div>
+        @foreach (var tt in Model)
+        { 
+            @tt.TENTC
+        }
+    </div>
+</body>
+</html>

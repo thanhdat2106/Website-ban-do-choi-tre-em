@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "SanPhamTH";
+    Layout = "~/Views/Shared/TrangChu.cshtml";
+}
+
+<div class="form-row">
+   @foreach (var item in Model)
+   {
+       <div class="item">
+       <div class="form-group col-md-4" style="text-align:center; padding-bottom:5px;">
+           <div style="border:1px solid #bebebe; width:330px; margin:auto ">
+                <div style="height:230px"><img id="hinh"  src="~/Content/HinhAnh/@item.HINHANH" width=200px height=200px title ="@item.TENSP" style="" /><br />
+            </div>
+                <div style="height:30px">
+                <p style="font-size:1.0em">Tên: <c style="text-transform:lowercase">@item.TENSP</c></p>
+                </div>
+                <div style="height:30px;">
+                <p style="font-size:1.2em"><b style="color:#4ccfc1">Đơn giá</b>: @item.DONGIA VND</p></div>
+                <div style="height:30px;">
+                <div class="nut">
+                   <a href="~/SanPham/CTSanPham/@item.MASP" style="text-decoration:none; color:#ffffff"><img src="~/Content/HinhAnh/chitiet.png"  width=50px height=50px /></a>
+                    <a href="@Url.Action("ThemGioHang", "GioHang", new { @ma = @item.MASP,@strURL=Request.Url.ToString()})" style="text-decoration:none; color:#ffffff"><img src="~/Content/HinhAnh/themgiohang.png" width=50px height=50px/></a>
+                </div>
+                </div>
+                <br />
+           </div>
+       </div>
+       </div>
+   }
+</div>

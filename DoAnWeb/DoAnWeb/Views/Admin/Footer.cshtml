@@ -1,0 +1,70 @@
+﻿@using DoAnWeb.Models;
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/Content/jquery_321/jquery-3.2.1.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+     @foreach (var item in Model)
+      {
+        <div class="row d_footer1">
+             <p class="col-lg-6 text1">FREE SHIPPING ON ORDERS OVER @item.freeship</p>
+             <p class="col-lg-6 text1">CALL US! TOLL FREE-@item.SDT</p>
+        </div>
+        <div class="row d_footer2">
+            <div class="col-lg-2">
+            <br />
+            <br />
+                     <div class="col-lg-4">
+                     <a href="https://www.facebook.com/?stype=lo&jlou=AfdF0gPVF3WT9uOamTqXD5wbbbgm3UdfVh43FnOvPdV0T2sm_25oRlMwChonkt2_xNsNusrXFK8qCm4OHMap55y7-n1vUrOdcOsEUMGB-5z4Ng&smuh=56400&lh=Ac8QUFVy2OkfB5mC">
+                     <img src="~/Content/HinhAnh/facebook.png" width="50px" height="50px" />
+                      </a>
+                      </div>
+                      <div class="col-lg-4"><a href="@Html.ActionLink("TRANG CHỦ","Home","Home")">
+                       <img src="~/Content/HinhAnh/zalo.png" width="50px" height="50px" />
+                        
+                      </a>
+                      </div>
+                       <div class="col-lg-4">
+                            <a href="@Html.ActionLink("TRANG CHỦ","Home","Home")">
+                                <img src="~/Content/HinhAnh/insta.png" width="50px" height="50px" />
+                             </a>
+                       </div>
+            </div>
+            <div class="col-lg-2">
+             @*<img src="~/Content/HinhAnh/child.png" width="200px" height="250px" />*@
+             <br />
+              <h3 style="color:white">THANH TOÁN</h3>
+            <div class="row">
+                     <img style="border:2px solid #4ccfc1" src="~/Content/HinhAnh/momo.jpg" width="80px" height="80px" />
+               
+               
+                     <img style="border:2px solid #4ccfc1" src="~/Content/HinhAnh/agribank.jpg" width="150px" height="80px" />
+                     <img style="border:2px solid #4ccfc1" src="~/Content/HinhAnh/vietcombank.jpg" width="80px" height="80px" />
+                     <img style="border:2px solid #4ccfc1" src="~/Content/HinhAnh/dongabank.jpg" width="150px" height="80px" />
+                        <img style="border:2px solid #4ccfc1" src="~/Content/HinhAnh/halifax.jpg" width="80px" height="80px" />
+                     <img style="border:2px solid #4ccfc1" src="~/Content/HinhAnh/shinhanbank.jpg" width="150px" height="80px" />
+                     
+               
+               </div>
+            <br />
+            <br />
+
+            </div>
+            <div class="col-lg-4 text">
+                    <h3>IMFORMATION</h3>
+                    <a class="nav-link">@Html.ActionLink("TRANG CHỦ","Home","Home")</a>
+                    <a class="nav-link">@Html.ActionLink("SALE","Home","Home")</a>
+                    <a class="nav-link">@Html.ActionLink("TIN TỨC","TinTuc","Home")</a>
+                    <a class="nav-link">@Html.ActionLink("GIỚI THIỆU","Home","Home")</a>
+                    <a class="nav-link">@Html.ActionLink("ĐĂNG KÝ","Home","Home")</a>
+                    <a class="nav-link">@Html.ActionLink("ĐĂNG NHẬP","Home","Home")</a>
+            </div>
+          <div class="col-lg-4 text">
+                <h3>CONTACT US</h3>
+                <p>ADDRESS: @item.DiaChi</p>
+                <p>Phone: @item.SDT</p>
+                <p>Gmail: @item.Email</p>
+                <p>Fax: @item.fax</p>
+            </div>
+        </div>
+     }
+ 

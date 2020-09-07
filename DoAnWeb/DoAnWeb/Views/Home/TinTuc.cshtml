@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/Content/jquery_321/jquery-3.2.1.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="container-fluid">
+<div class="header_bg">
+    <div class="row">
+    <div class="col-lg-4">
+			<a href="#"><img src="~/Content/HinhAnh/logo.png" alt="" width="300" height="100"/> </a>
+		</div>
+       <form class="col-lg-4 form-inline my-2 my-lg-0">
+       @using (Html.BeginForm())
+                {
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="search" >
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                 }
+         </form>
+         <div class="col-lg-2 my-3 ">
+            <a href="@Url.Action("GioHang","GioHang")"><img src="~/Content/HinhAnh/giohang.png" width="70" height="70" style="text-decoration:none"/>@Html.Action("GiohangPartial","GioHang")</a>
+         </div>
+         <div class="col-lg-2 my-3 ">
+         <a href="~/DangKy_DangNhap/DangXuat"><img class="taikhoan" src="~/Content/HinhAnh/avatar.png"  width="50px" height="50px"/></a> <b> @Session["Tentk"]</b>
+            
+         </div>
+        </div>
+    
+</div>
+
+<div class="d_menu">             
+    <nav class="navbar navbar-expand-sm navbar-dark" >
+      <a class="navbar-brand"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+        <ul class="navbar-nav row" >
+        <li class="nav-item col-dm-2  " >
+            <a class="nav-link">@Html.ActionLink("TRANG CHỦ","Home","Home")</a>
+          </li>
+          <li class="nav-item col-dm-2">
+            <a class="nav-link">@Html.ActionLink("SALE","Home","Home")</a>
+          </li>
+          <li class="nav-item col-dm-2">
+            <a class="nav-link">@Html.ActionLink("TIN TỨC","Home","Home")</a>
+          </li>
+          <li class="nav-item col-dm-2">
+            <a class="nav-link">@Html.ActionLink("GIỚI THIỆU","GioiThieu","Home")</a>
+      </li>    
+        <li class="nav-item col-dm-2">
+            <a class="nav-link">@Html.ActionLink("ĐĂNG KÝ","DangKy","DangKy_DangNhap")</a>
+      </li>
+        <li class="nav-item col-dm-2">
+            <a class="nav-link">@Html.ActionLink("ĐĂNG NHẬP","DangNhap","DangKy_DangNhap")</a>
+      </li>
+    </ul>
+  </div>  
+</nav>
+    </div>
+    <div>
+    <br />
+        <div class="row">
+            <div class="col-lg-8">
+                @foreach (var tt in Model[0])
+                { 
+                     <p> <a style="font-size:1.5em; color:#ed2f2f;font-weight:500"class="col-lg-8 "href="~/Home/CTTinTuc/@tt.MATC)">@tt.TENTC</a></p>
+                    <img src="~/Content/HinhAnh/@tt.HINHANH" width="400" height="300px" style="float:left; margin-right:10px;" />
+                    <p style="font-size:1.2em;">@Html.Raw(tt.MOTA.Substring(0,692)) </p>
+                }
+            </div>
+            <div class="col-lg-4">
+                @foreach (var tt in Model[1])
+                { 
+                    <div class="row">
+                    <img src="~/Content/HinhAnh/@tt.HINHANH" width="200" height="100px"  class="col-lg-4" />
+                    <a style="font-size:1.2em;float:right; color:#000000"class="col-lg-8" href="~/Home/CTTinTuc/@tt.MATC">@tt.TENTC</a>
+                    </div>
+                    <br />
+                }           
+            </div>
+        </div>
+        <br />
+        <div class ="row">
+            <div class="col-lg-4">
+                @foreach (var tt in Model[2])
+                { 
+                    <div class="row" style="margin-bottom:10px">
+                        <img src="~/Content/HinhAnh/@tt.HINHANH" width="200" height="100px"  class="col-lg-4" />
+                             <a style="font-size:1.2em;float:right; color:#000000"class="col-lg-8 "href="~/Home/CTTinTuc/@tt.MATC">@tt.TENTC</a>
+                 
+                    </div>
+                    <br />
+                }
+            </div>
+            <div class="col-lg-4">
+                @foreach (var tt in Model[3])
+                { 
+                    <div class="row" style="margin-bottom:10px">
+                        <img src="~/Content/HinhAnh/@tt.HINHANH" width="200" height="100px"  class="col-lg-4" />
+                            <a style="font-size:1.2em;float:right; color:#000000"class="col-lg-8 "href="~/Home/CTTinTuc/@tt.MATC">@tt.TENTC</a>
+                 
+                    </div>
+                    <br />
+                }
+            </div>
+            <div class="col-lg-4">
+               @foreach (var tt in Model[4])
+                { 
+                    <div class="row" style="margin-bottom:10px">
+                        <img src="~/Content/HinhAnh/@tt.HINHANH" width="200" height="100px"  class="col-lg-4" />
+                            <a style="font-size:1.2em;float:right; color:#000000"class="col-lg-8 "href="~/Home/CTTinTuc/@tt.MATC">@tt.TENTC</a>
+                 
+                    </div>
+                   <br />
+                }
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="d_footer">
+        <div class="row d_footer1">
+             <p class="col-lg-6 text1">FREE SHIPPING ON ORDERS OVER 500.000 VND</p>
+             <p class="col-lg-6 text1">CALL US! TOLL FREE-0823742210</p>
+        </div>
+        <div class="row d_footer2">
+            <div class="col-lg-4 text">
+                    <h3>FACEBOOK</h3>
+                    <p>FAN PAGE</p>
+                    <p>Đường link</p>
+            </div>
+            <div class="col-lg-4 text">
+                    <h3>IMFORMATION</h3>
+                    <a class="nav-link">@Html.ActionLink("TRANG CHỦ","Home","Home")</a>
+                    <a class="nav-link">@Html.ActionLink("SALE","Home","Home")</a>
+                    <a class="nav-link">@Html.ActionLink("TIN TỨC","TinTuc","Home")</a>
+                    <a class="nav-link">@Html.ActionLink("GIỚI THIỆU","Home","Home")</a>
+                    <a class="nav-link">@Html.ActionLink("ĐĂNG KÝ","Home","Home")</a>
+                    <a class="nav-link">@Html.ActionLink("ĐĂNG NHẬP","Home","Home")</a>
+            </div>
+            <div class="col-lg-4 text">
+                <h3>CONTACT US</h3>
+                <p>ADDRESS: 19 / 3D street No. 30, Linh Đông ward, Thủ Đức district, HCM city</p>
+                <p>Phone: 0823742210</p>
+                <p>Gmail-1: nguyenthanhdat@gmail.com</p>
+                <p>Gmail-2: tranthanhcanh@gmail.com</p>
+                <p>Fax: (000) 000 00 00 0</p>
+            </div>
+        </div>
+
+   </div>
+   
+
+   </div>
+</body>
+</html>

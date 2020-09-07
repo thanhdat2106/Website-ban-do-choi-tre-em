@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+<link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>tinymce.init({ selector: 'textarea' });</script>
+@using (Html.BeginForm())
+{
+<div class="container-fluid">
+<div class="row">
+     <div class="col-lg-9">
+    @foreach(var sp in Model)
+    {   
+            <label>MASP :</label>
+           <input name="masp" type="text" size="100px" value="@sp.MASP"/>
+           <br />
+            <label>TENSP :</label>
+           <input name="tensp" type="text" size="100px" value="@sp.TENSP"/>
+           <br />
+           <label>Hình ảnh:</label>
+             <input name="ha" type="text" name="picture" id="picture" size="100px" value="@sp.HINHANH" />
+             <input type="file" name="fileupload" id="fileupload" style="display:none" accept="HinhAnh/*" />
+             <input type="button" value="..." id="btnUpload"/>
+          <br />
+            <label>Đơn giá :</label>
+           <input name="dongia" type="text" size="100px" value="@sp.DONGIA"/>
+           <br />
+        <label>Chi tiết :</label>
+           <textarea name="chitiet">@sp.CHITIET</textarea>
+           <br />
+        @*<label>Mã loại :</label>
+             @Html.DropDownList("MALOAI");
+           <br />
+        <label>MACL :</label>
+             @Html.DropDownList("MACL");
+           <br />
+        <label>Mã thương hiệu :</label>
+             @Html.DropDownList("MATH");
+           <br />
+        <label>Mã tuổi :</label>
+             @Html.DropDownList("MATUOI");
+           *@<br />
+         
+            <p>
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </p>
+    }
+         </div>
+      <div class="col-lg-3">
+     </div>
+    
+</div>
+</div>
+    
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+@section upload
+{
+<script>
+    $(function () {
+        $('#btnUpload').click(function () {
+            $('#fileupload').trigger('click');
+        });
+
+        //Bắt sự kiện change data của fileupload
+        $('#fileupload').change(function () {
+            //Kiểm tra trình duyệt có hỗ trợ FormData object không?
+            if (window.FormData !== undefined) {
+                var fileupload = $('#fileupload').get(0);
+                var files = fileupload.files;
+                //Tao doi tuong formdata
+                var formData = new FormData();
+                //Dua du liệu vào form
+                formData.append('file', files[0]);
+                $.ajax({
+                    type: 'POST',
+                    url: '/Admin/ProcessCreate',
+                    contentType: false,
+                    processData: false,
+                    data: formData,
+                    success: function (url) {
+                        $('#pictureUpload').attr('src', url);
+                        $('#picture').val(url);
+                    },
+                    error: function (err) {
+                        alert('Có lỗi khi upload:' + err.statusText);
+                    }
+                });
+            }
+        });
+    });
+</script>
+}

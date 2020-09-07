@@ -1,0 +1,74 @@
+﻿@model IEnumerable<DoAnWeb.Models.CHITIETHD>
+
+@{
+    ViewBag.Title = "CTHoaDon";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport1" content="width=device-width" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/Content/jquery_321/jquery-3.2.1.min.js"></script>
+    <script src="https://unpkg.com/popper.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <meta name="viewport1" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="container-fluid">
+
+@using (Html.BeginForm())
+{
+    <div class="form-group row"> 
+        <b class="col-sm-2" style="font-size:1.2em">Mã hóa đơn</b> @Html.TextBox("SearchString", (string)ViewBag.searchValue, new { @class="form-control col-md-2" })  
+        <input type="submit" value="Tìm kiếm" class="btn btn-info col-md-1" style="margin-left:5px" />
+    </div>
+}
+<div class="row" >
+<table class="table ">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MAHD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MASP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SOLUONG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DONGIA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.THANHTIEN)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+         <td>
+            @Html.DisplayFor(modelItem => item.MAHD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MASP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SOLUONG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DONGIA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.THANHTIEN)
+        </td>
+    </tr>
+}
+
+</table>
+</div>
+</div>
+</body>
+</html>
